@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+    <style>
+        table{border-collapse: collapse;
+            width: 600px;
+            font-size: 20px;}
+        td,th{background-color: rgb(247, 66, 66);
+            border: 1px solid greenyellow;
+            color: rgb(18, 8, 109);}
+        th{color: rgb(2, 2, 61);background-color: grey;}
+    </style>
+</head>
+<body>
+    <table border="5">
+        {% for course in courses %}
+            <tr>
+                <th><b>Title</b> {{ course.title }}</th>
+                <th><b>Description</b> {{ course.description }}</th>
+                <th><b>Created_at</b>{{ course.created_at }}</th>
+                <th><b>Updated_at</b>{{ course.updated_at }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+ <style>
+        table{border-collapse: collapse;
+            width: 700px;
+            font-size: 20px;}
+        td,th{background-color: rgb(247, 66, 66);
+            border: 1px solid greenyellow;
+            color: rgb(18, 8, 109);}
+        th{color: rgb(207, 21, 21);background-color: rgb(227, 231, 233);}
+    </style>
+</head>
+<body>
+    <table border="5">
+        {% for student in students %}
+            <tr>
+                {% if student.photo %}
+                <th><img src="{{ student.photo.url }}" width="75px"></th>
+                {% endif %}
+                <th><b>Ismi:</b> {{ student.name }}</th>
+                <th><b>Email:</b> {{ student.email }}</th>
+                <th><b>Enrolled_at:</b> {{ student.enrolled_at }}</th>
+                <th><b>Course:</b> {{ student.course }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
